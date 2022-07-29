@@ -22,10 +22,10 @@ export default function CityData({ city }) {
         <td>{ct.state}</td>
         <td>{ct.country}</td>
         <td>{ct.touristRating}</td>
-        <td>{ct.establishedDate}</td>
+        <td>{ct.establishedDate.substring(0, 10)}</td>
         <td>{ct.estimatedPopulation}</td>
         <td>{`${ct.currencyName} ${ct.currencySymbol}`}</td>
-        <td>{ct.weather}</td>
+        <td>{`${Math.round(ct.weather-273.15)} ° C` } </td>
       </tr>
       ))}
       </tbody>

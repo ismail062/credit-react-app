@@ -1,8 +1,14 @@
 .App {
   text-align: center;
 }
-
-
+table{
+  margin-top: 15px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 4px;
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -31,11 +37,6 @@
   font-size: 17px;
 }
 
-.table {
-  border: 1;
-  color: #000;
-}
-
 .btn {
   display: inline-block;
   background: #000;
@@ -48,4 +49,11 @@
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+}
+
+.search__city{
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

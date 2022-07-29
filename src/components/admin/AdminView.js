@@ -1,11 +1,11 @@
-import React, { useEffect} from "react";
 import { FaTrashAlt, FaPen } from "react-icons/fa";
 import Button from "../shared/Button";
+import "../../App.css"
 export default function AdminView({ city, onDelete, onUpdate, onAdd}) {
    
   return (
-    <>
-    <h1>Administration</h1>
+    <div className="search__city">
+    <h1 >Administration</h1>
     <Button text={"+"} color={"gray"} onClick={() => onAdd()}></Button>
     <table>
       <thead>
@@ -28,7 +28,7 @@ export default function AdminView({ city, onDelete, onUpdate, onAdd}) {
             <td>{ct.state}</td>
             <td>{ct.country}</td>
             <td>{ct.touristRating}</td>
-            <td>{ct.establishedDate}</td>
+            <td>{ct.establishedDate.substring(0, 10)}</td>
             <td>{ct.estimatedPopulation}</td>
             <td>{`${ct.currencyName} ${ct.currencySymbol}`}</td>
             <td>{ct.weather}</td>
@@ -40,6 +40,6 @@ export default function AdminView({ city, onDelete, onUpdate, onAdd}) {
         ))}
       </tbody>
     </table>
-    </>
+    </div>
   );
 }
