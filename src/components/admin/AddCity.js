@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { addCityToDB } from "../../service/cities";
 
 const AddCity = ({ onAdd }) => {
   const cityInputRef = useRef(null);
@@ -7,16 +8,15 @@ const AddCity = ({ onAdd }) => {
   const ratingInputRef = useRef(null);
   const estDateInputRef = useRef(null);
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const name = cityInputRef.current.value;
     const country = countryInputRef.current.value;
     const state = stateInputRef.current.value;
     const rating = ratingInputRef.current.value;
-    const establishedDate = estDateInputRef.current.value; 
-    console.log(`${name} ${state} ${rating} ${establishedDate} ${country}`);
+    const establishedDate = estDateInputRef.current.value;
 
-    onAdd({
+    await addCityToDB({
       name,
       country,
       state,

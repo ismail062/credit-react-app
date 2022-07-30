@@ -23,7 +23,7 @@ export default function CityData({ city }) {
         <td>{ct.country}</td>
         <td>{ct.touristRating}</td>
         <td>{ct.establishedDate.substring(0, 10)}</td>
-        <td>{ct.estimatedPopulation}</td>
+        <td>{(Math.abs(Number(ct.population)) / 1.0e+6).toFixed(2) + 'm'}</td>
         <td>{`${ct.currencyName} ${ct.currencySymbol}`}</td>
         <td>{`${Math.round(ct.weather-273.15)} ° C` } </td>
       </tr>

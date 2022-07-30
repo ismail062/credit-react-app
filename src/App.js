@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
+import swal from 'sweetalert'
 import SearchCity from "./components/searchCity";
 import AdminView from "./components/admin/AdminView";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { deleteCity, getCityByName } from "./service/countries";
+import { deleteCity, getCityByName } from "./service/cities";
 function App() {
   const [cities, setCity] = useState([]);
 
@@ -38,7 +38,7 @@ function App() {
   const removeCity = async (id) => {
     await deleteCity(id);
     setCity(cities.filter((city) => city.id !== id));
-    alert("city deleted successfully");
+    swal("Deleted!", "City deleted successfully", "success");
   };
 
   const updateCity = async (id) => {

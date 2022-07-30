@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import CityData from "./CityData";
-import { getCityByName } from "../service/countries";
+import { getCityByName } from "../service/cities";
+import swal from 'sweetalert'
 import "../App.css";
 export default function SearchCity() {
   const [cities, setCities] = useState([]);
@@ -9,7 +10,7 @@ export default function SearchCity() {
     e.preventDefault();
     const city = cityInputRef.current.value;
     if (!city || city.length <= 3) {
-      alert("Please enter a city name");
+      swal("Oops!", "City cannot be empty", "error");
       cityInputRef.current.value = "";
       return;
     }
@@ -19,7 +20,7 @@ export default function SearchCity() {
     });
     // check if not city found
     if (cityData.found === false) {
-      alert(`${city} city not found in local database`);
+      swal(`${city} NOT Found!`, `${city} City not found in local database`, "error");
       cityInputRef.current.value = "";
       return;
     }
