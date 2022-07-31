@@ -6,7 +6,7 @@ import UpdateCity from "./UpdateCity";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-export default function AdminView({ city, onDelete, onUpdate }) {
+export default function AdminView({ city, onDelete }) {
   const [show, setShow] = useState(false);
   const [updateShow, setUpdateShow] = useState(false)
   const [cityId, setCityId] = useState(0);
@@ -29,7 +29,7 @@ export default function AdminView({ city, onDelete, onUpdate }) {
           <Modal.Title>Add New City</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddCity show={show}  stateChanger= {setShow}></AddCity>
+          <AddCity  stateChanger= {setShow}></AddCity>
         </Modal.Body>
       </Modal>
 
@@ -38,7 +38,7 @@ export default function AdminView({ city, onDelete, onUpdate }) {
           <Modal.Title>Update City</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <UpdateCity cityId = {cityId} show={updateShow} stateChanger={setUpdateShow}></UpdateCity>
+        <UpdateCity cityId = {cityId} stateChanger={setUpdateShow}></UpdateCity>
         </Modal.Body>
       </Modal>
       <table>

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { addCityToDB } from "../../service/cities";
 import swal from "sweetalert";
 
-const AddCity = ({ show, stateChanger }) => {
+const AddCity = ({  stateChanger }) => {
   const cityInputRef = useRef(null);
   const countryInputRef = useRef(null);
   const stateInputRef = useRef(null);

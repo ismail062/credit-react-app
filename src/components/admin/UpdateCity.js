@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import swal from "sweetalert";
 import { updateCity } from "../../service/cities";
 
-const UpdateCity = ({ cityId, show, stateChanger }) => {
+const UpdateCity = ({ cityId, stateChanger }) => {
   const populationInputRef = useRef(null);
   const ratingInputRef = useRef(null);
   const estDateInputRef = useRef(null);
@@ -62,7 +62,8 @@ const UpdateCity = ({ cityId, show, stateChanger }) => {
         <div className="col-md-8">
           <input
             className="form-control"
-            type="text"
+            type="number"
+            min="1"
             ref={populationInputRef}
           />
         </div>

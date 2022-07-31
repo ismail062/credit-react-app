@@ -41,14 +41,6 @@ function App() {
     swal("Deleted!", "City deleted successfully", "success");
   };
 
-  const updateCity = async (id) => {
-    console.log(`update city with id ${id}`);
-  };
-
-  const addCity = async (data) => {
-    console.log(`add city with data ${data}`);
-  };
-
   return (
     <>
       <BrowserRouter>
@@ -76,8 +68,6 @@ function App() {
               <AdminView
                 city={cities}
                 onDelete={removeCity}
-                onUpdate={updateCity}
-                onAdd={addCity}
               />
             }
           />
