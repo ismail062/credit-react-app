@@ -20,7 +20,10 @@ export default function AdminView({ city, onDelete, onUpdate }) {
   return (
     <div className="search__city">
       <h1>Administration</h1>
-      <Button onClick={handleShow}> + </Button>
+      <div className="float-left">
+      <Button onClick={handleShow} className="float-left"> + </Button>
+      </div>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add New City</Modal.Title>

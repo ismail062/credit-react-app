@@ -27,19 +27,38 @@ const UpdateCity = ({ cityId, show,  stateChanger}) => {
   return (
     <form className="add-form" onSubmit={onSubmit}>
            
-      <div className="form-control">
+           <div className="row">
+      <div className="col-md-4 align_center_element">
         <label>Tourist Rating</label>
-        <input type="text" ref={ratingInputRef} />
+        </div>
+        <div className="col-md-8">
+        <input className="form-control" type="text" ref={ratingInputRef} />
+        </div>
       </div>
-      <div className="form-control">
+      <div className="row">
+      <div className="col-md-4 align_center_element">
         <label>Date Established</label>
-        <input type="text" ref={estDateInputRef} />
+        </div>
+        <div className="col-md-8">
+        <input className="form-control" type="text" ref={estDateInputRef} />
+        </div>
       </div>
-      <div className="form-control">
+      <div className="row">
+      <div className="col-md-4 align_center_element">
         <label>Population</label>
-        <input type="text" ref={populationInputRef} />
+        </div>
+        <div className="col-md-8">
+        <input className="form-control" type="text" ref={populationInputRef}/>
+        </div>
       </div>
-      <input type="submit" value="Submit" className="btn btn-block" />
+  
+      <div className="row">
+      <div className="col-md-9">
+        &nbsp;        </div>
+        <div className="col-md-3">
+      <input type="submit" value="Submit" className="btn btn-block" />      
+        </div>
+      </div>
     </form>
   );
 };

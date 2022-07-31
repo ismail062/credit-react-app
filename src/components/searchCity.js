@@ -33,7 +33,7 @@ export default function SearchCity() {
   };
 
   return (
-    <div className="search__city">
+    <div className="search">
       <form onSubmit={onSubmit}>
         <input type="text" placeholder="Enter city name" ref={cityInputRef} />
         <input type="submit" value="Search" />

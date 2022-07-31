@@ -61,10 +61,10 @@ function App() {
             paddingBottom: "20px",
           }}
         >
-          <button>
+          <button className="btn btn-primary">
             <Link to="/user">User</Link>
           </button>
-          <button>
+          <button className="btn btn-success">
             <Link to="/admin">Admin</Link>
           </button>
         </div>
