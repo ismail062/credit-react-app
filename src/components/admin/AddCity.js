@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import { addCityToDB } from "../../service/cities";
+import swal from 'sweetalert';
 
-const AddCity = ({ onAdd }) => {
+const AddCity = ({ show, stateChanger }) => {
   const cityInputRef = useRef(null);
   const countryInputRef = useRef(null);
   const stateInputRef = useRef(null);
@@ -9,6 +10,7 @@ const AddCity = ({ onAdd }) => {
   const estDateInputRef = useRef(null);
 
   const onSubmit = async (e) => {
+    console.log('show', show);
     e.preventDefault();
     const name = cityInputRef.current.value;
     const country = countryInputRef.current.value;
@@ -16,13 +18,16 @@ const AddCity = ({ onAdd }) => {
     const touristRating = ratingInputRef.current.value;
     const establishedDate = estDateInputRef.current.value;
 
-    await addCityToDB({
+    const city = await addCityToDB({
       name,
       country,
       state,
       touristRating,
       establishedDate,
     });
+
+    swal("Success", `City with id ${city.city} has been added successfully`, "success");
+    stateChanger(false);
   };
 
   return (

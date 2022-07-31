@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
+import swal from "sweetalert";
 import { updateCity } from "../../service/cities";
 
-const UpdateCity = ({ cityId }) => {
+const UpdateCity = ({ cityId, show,  stateChanger}) => {
+
   const populationInputRef = useRef(null);
   const ratingInputRef = useRef(null);
   const estDateInputRef = useRef(null);
@@ -18,6 +20,8 @@ const UpdateCity = ({ cityId }) => {
       touristRating,
       establishedDate,
     });
+    swal("Updated!", "City Updated successfully", "success");
+    stateChanger(false);
   };
 
   return (
