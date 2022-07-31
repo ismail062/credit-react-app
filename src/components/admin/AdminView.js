@@ -2,11 +2,13 @@ import { FaTrashAlt, FaPen } from "react-icons/fa";
 import Button from "../shared/Button";
 import "../../App.css";
 import AddCity from "./AddCity";
+import UpdateCity from "./UpdateCity";
 
 export default function AdminView({ city, onDelete, onUpdate, onAdd }) {
   return (
     <div className="search__city">
       <h1>Administration</h1>
+      <UpdateCity></UpdateCity>
       <Button text={"+"} color={"gray"} onClick={() => onAdd()}></Button>
       <table>
         <thead>

@@ -22,7 +22,8 @@ const addCityToDB = async (city) => {
 };
 
 const updateCity = async (city) => {
-  const res = await fetch(`${API_URL}/city`, {
+  console.log(city);
+  const res = await fetch(`${API_URL}/city/${city.id}`, {
     method: "PATCH",
     headers: { Accept: "application/json", "Content-Type": "application/json" },
     body: JSON.stringify(city),

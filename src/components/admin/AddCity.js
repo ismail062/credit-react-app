@@ -13,14 +13,14 @@ const AddCity = ({ onAdd }) => {
     const name = cityInputRef.current.value;
     const country = countryInputRef.current.value;
     const state = stateInputRef.current.value;
-    const rating = ratingInputRef.current.value;
+    const touristRating = ratingInputRef.current.value;
     const establishedDate = estDateInputRef.current.value;
 
     await addCityToDB({
       name,
       country,
       state,
-      rating,
+      touristRating,
       establishedDate,
     });
   };

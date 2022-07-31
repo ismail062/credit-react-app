@@ -40,7 +40,7 @@ table, th, td {
 .btn {
   display: inline-block;
   background: #000;
-  color: #fff;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 10px 20px;
   margin: 5px;
