@@ -39,7 +39,7 @@ table, th, td {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: rgb(80, 80, 80);
   color: rgb(255, 255, 255);
   border: none;
   padding: 10px 20px;
@@ -47,7 +47,7 @@ table, th, td {
   border-radius: 60px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
   font-family: inherit;
 }
 
@@ -79,5 +79,12 @@ thead tr th{
 background-color: darkgray;
 }
 tr td{
-  background-color: lightgray;
+  background-color: rgb(238, 235, 235);
+  }
+
+  .link {
+    color: #FFF;
+  }
+  .link:hover {
+     color: #00F
   }

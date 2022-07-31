@@ -17,6 +17,11 @@ const AddCity = ({ show, stateChanger }) => {
     const touristRating = ratingInputRef.current.value;
     const establishedDate = estDateInputRef.current.value;
 
+    if (!name || !country || !state || !establishedDate || !touristRating) {
+      swal("Vlaidation failed!", "All fields are required", "error");
+      return;
+    }
+
     const city = await addCityToDB({
       name,
       country,
@@ -43,50 +48,77 @@ const AddCity = ({ show, stateChanger }) => {
           <input
             type="text"
             className="form-control"
-            placeholder=""
+            required
+            placeholder="capital city e.g. London"
             ref={cityInputRef}
           />
         </div>
       </div>
       <div>
-      <div className="row">
-      <div className="col-md-4 align_center_element">
-        <label>Country</label>
-        </div>
-        <div className="col-md-8">
-        <input className="form-control" type="text" ref={countryInputRef} />
-        </div>
-        </div>
-      </div>
-      <div className="row">
-      <div className="col-md-4 align_center_element">
-        <label>State</label>
-        </div>
-        <div className="col-md-8">
-        <input className="form-control" type="text" ref={stateInputRef} />
+        <div className="row">
+          <div className="col-md-4 align_center_element">
+            <label>Country</label>
+          </div>
+          <div className="col-md-8">
+            <input
+              className="form-control"
+              type="text"
+              required
+              placeholder="country name e.g. UK"
+              ref={countryInputRef}
+            />
+          </div>
         </div>
       </div>
       <div className="row">
-      <div className="col-md-4 align_center_element">
-        <label>Tourist Rating</label>
+        <div className="col-md-4 align_center_element">
+          <label>State</label>
         </div>
         <div className="col-md-8">
-        <input className="form-control" type="text" ref={ratingInputRef} />
+          <input
+            className="form-control"
+            placeholder="State name"
+            type="text"
+            required
+            ref={stateInputRef}
+          />
         </div>
       </div>
       <div className="row">
-      <div className="col-md-4 align_center_element">
-        <label>Date Established</label>
+        <div className="col-md-4 align_center_element">
+          <label>Tourist Rating</label>
         </div>
         <div className="col-md-8">
-        <input className="form-control" type="text" ref={estDateInputRef} />
+          <input
+            className="form-control"
+            type="number"
+            step="0.1"
+            min="0"
+            max="5"
+            required
+            ref={ratingInputRef}
+            placeholder="Tourist rating of the capital city"
+          />
         </div>
       </div>
       <div className="row">
-      <div className="col-md-9">
-        &nbsp;        </div>
+        <div className="col-md-4 align_center_element">
+          <label>Date Established</label>
+        </div>
+        <div className="col-md-8">
+          <input
+            className="form-control"
+            placeholder="yyyy-mm-dd e.b. 2022-07-31"
+            type="date"
+            required
+            ref={estDateInputRef}
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-9">&nbsp; </div>
         <div className="col-md-3">
-      <input type="submit" value="Submit" className="btn btn-block" />      
+          <input type="submit" value="Submit" className="btn btn-block" />
         </div>
       </div>
     </form>

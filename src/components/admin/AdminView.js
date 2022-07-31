@@ -21,7 +21,7 @@ export default function AdminView({ city, onDelete, onUpdate }) {
     <div className="search__city">
       <h1>Administration</h1>
       <div className="float-left">
-      <Button onClick={handleShow} className="float-left"> + </Button>
+      <Button variant="success" onClick={handleShow} className="float-left" > + </Button>
       </div>
 
       <Modal show={show} onHide={handleClose}>

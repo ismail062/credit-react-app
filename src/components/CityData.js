@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CityData({ city }) {
   return (
-    <table>
+    <table className="city__search">
       <thead>
         <tr>
           <th>Name</th>
