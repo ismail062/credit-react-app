@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const fetchCities = async () => {
-      const res = await fetch("http://localhost:3000/api/v1/city/");
+      const res = await fetch("http://localhost:5000/api/v1/city/");
       const data = await res.json();
       const newData = await data.map(async (city) => {
         const ct = await fetchCity(city.name);
