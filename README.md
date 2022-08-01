@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# Frontend application prototype
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a prototype in the react.
+## Description
+
+It has two routes which can be accessed on app home page. Two buttons can be found `User` & `Admin`. 
+1. `/` => to search the city and find first in the local database through an api request. `fetch` is used to communicate with api. If city not found in the local database, not result will be returned. An alert will be shown city not found. 
+2. `/admin`=> admin view prototype to see all the cities stored in the local database. an request sends to api on load to fetch all cities.
+    a. `+` button to add new city to the datbase. it open an form in a dialog box. 
+    b.  each city row has two button in Modify column. one of delete the city and another to update the city. 
+
+- built-in libraries such react-bootstrap is used for dialog box. 
+- functional components are used.
+- authentication is missing for admin
+- test are missing
+- if city not found, it will not search external apis such weather open api or RestCountries API. 
 
 ## Available Scripts
 

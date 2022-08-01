@@ -54,14 +54,14 @@ function App() {
           }}
         >
           <button className="btn btn-primary">
-            <Link to="/user" className="link">User</Link>
+            <Link to="/" className="link">User</Link>
           </button>
           <button className="btn btn-success">
             <Link to="/admin" className="link">Admin</Link>
           </button>
         </div>
         <Routes>
-          <Route path="/user" element={<SearchCity />} />
+          <Route path="/" element={<SearchCity />}></Route>
           <Route
             path="/admin"
             element={
@@ -71,7 +71,6 @@ function App() {
               />
             }
           />
-          {/* <AddCity onAdd={addCity} /> */}
         </Routes>
       </BrowserRouter>
     </>
