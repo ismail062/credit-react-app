@@ -8,7 +8,7 @@ It has two routes which can be accessed on app home page. Two buttons can be fou
 2. `/admin`=> admin view prototype to see all the cities stored in the local database. an request sends to api on load to fetch all cities.
     a. `+` button to add new city to the datbase. it open an form in a dialog box. 
     b.  each city row has two button in Modify column. one of delete the city and another to update the city. 
-
+### points
 - built-in libraries such react-bootstrap is used for dialog box. 
 - functional components are used.
 - authentication is missing for admin
